@@ -1,4 +1,4 @@
-                #ternary operator
+#ternary operator
 
 # age = int(input("Enter your age: "))
 # message = "You are Welcome!" if age >=18 else "You are not allowed!"
