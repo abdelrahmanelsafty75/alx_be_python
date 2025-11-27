@@ -135,3 +135,36 @@
 #         j += 1
 #     print()
 #     i -= 1
+
+
+# rows = 5
+# for i in range(1, rows + 1):
+#     for j in range(1, i + 1):
+#         print("*", end=' ')
+#     print()
+
+                            #pyramid pattern
+row = 7
+cur = 1
+while row >= cur:
+    star_cnt = (2*cur) -1
+    space_cnt = row - cur
+    while space_cnt:
+        print(" ", end='')
+        space_cnt -= 1
+    while star_cnt:
+        print("*", end='')
+        star_cnt -= 1
+    print()
+    cur += 1
+                            # OR
+row = 7
+for i in range(1,row+1):
+    print(' '*(row-i) + '*'*(2*i-1))
+   
+#                 multiplication table using nested loops
+# for i in range (1,11):
+#     for j in range(1,11):
+#         print(f"{i} x {j} = {i*j}", end='\t')
+#     print()
+
