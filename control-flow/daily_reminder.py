@@ -14,7 +14,7 @@ match priority:
         answer = "Please enter a valid priority level: High, Medium, or Low."
 
 
-if time_bound.lower() == "yes":
+if time_bound == "yes":
     print(f"Reminder: {answer}")
 else:
     print(f"Note: {answer}")
