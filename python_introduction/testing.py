@@ -144,27 +144,166 @@
 #     print()
 
                             #pyramid pattern
-row = 7
-cur = 1
-while row >= cur:
-    star_cnt = (2*cur) -1
-    space_cnt = row - cur
-    while space_cnt:
-        print(" ", end='')
-        space_cnt -= 1
-    while star_cnt:
-        print("*", end='')
-        star_cnt -= 1
-    print()
-    cur += 1
-                            # OR
-row = 7
-for i in range(1,row+1):
-    print(' '*(row-i) + '*'*(2*i-1))
+# row = 7
+# cur = 1
+# while row >= cur:
+#     star_cnt = (2*cur) -1
+#     space_cnt = row - cur
+#     while space_cnt:
+#         print(" ", end='')
+#         space_cnt -= 1
+#     while star_cnt:
+#         print("*", end='')
+#         star_cnt -= 1
+#     print()
+#     cur += 1
+#                             # OR
+# row = 7
+# for i in range(1,row+1):
+#     print(' '*(row-i) + '*'*(2*i-1))
    
 #                 multiplication table using nested loops
 # for i in range (1,11):
 #     for j in range(1,11):
 #         print(f"{i} x {j} = {i*j}", end='\t')
 #     print()
+
+
+                    # fnction definition and call
+# def greet(name):
+#     print(f"Hello, {name}!")
+
+# greet("Abdelrahman")
+
+# def add(a,b):           # regular function
+#     return a+b
+# print(add(3,5))
+
+# sum = lambda a,b: a+b       # lambda function
+# print(sum(4,6))
+
+                            #global variable
+# cnt = 0
+# def increment():
+#     global cnt
+#     cnt += 1
+    
+# increment()
+# print(cnt) # 1
+
+#                             #nonlocal variable      
+# def outer_function():
+#     x = 10 
+#     def inner_function():
+#         nonlocal x  # Using nonlocal to modify x from the enclosing(outer) function
+#         x += 5      # to make it modifiable , not just readable
+
+#     inner_function()  # 
+#     print("Modified value of x from inner function:", x)
+
+# outer_function()
+
+# num = 5
+# def check(x):
+#     return "Even" if x % 2 == 0 else "Odd"
+# print(check(num))
+
+
+                    #Data Structures: Lists, Tuples, sets,and Dictionaries
+
+tub=(1,2,3) #tuples are ordered and immutable 
+print(tub)
+print(type(tub))
+# tub[0]=10   immutable (we cannot change their elements)
+
+li = list(tub) #convert tuple to list
+li[0]=10
+print(li)
+print(type(li))
+
+my_list = [1, 2, 3, 4, 5]  # list is ordered and mutable
+print(my_list) 
+my_list.pop()  # removes last element
+print(my_list)
+my_list.append(6)  # adds element at the end
+print(my_list)
+my_list[0] = 10  # modify element
+print(my_list)
+print(my_list[::-1])  # reverse list
+print(my_list[1:4])  # slicing
+print(len(my_list))  # length of list
+my_list.sort()  # sort list
+print(my_list)
+print(my_list[:-2]) # all elements except last two
+del my_list[1]  # delete element at index 1
+print(my_list)
+print(3 in my_list)  # check membership
+print(my_list.index(4))  # index of element
+print(my_list.count(2))  # count occurrences of element
+
+print("=============================")
+
+#set
+set_a = {1, 2, 2, 2, 3, 4, 4, 5}  # set is unordered and mutable
+print(set_a)
+print(type(set_a))
+print(len(set_a))  # length of set (duplicates are removed)
+set_a.add(6)  # add element
+print(set_a)
+set_a.remove(3)  # remove element
+#print(set_a[2])  # sets are unordered, cannot access by index
+print(set_a)
+set_a.discard(10)  # remove element if exists, no error if not
+print(set_a)
+print(2 in set_a)  # check membership
+x={10,20,20,20,30,30}
+y={30,10,20}
+print(x==y)  # sets are equal if they have same elements, order doesn't matter
+lst = [1,2,2,3,4,4,5]
+unique_set = set(lst)  # convert list to set to remove duplicates
+print("Unique elements:", unique_set)
+set_b = {20,40,40,80,100,100,100}
+set_c = {10,10,30,30,30,50,40,20}
+union_set = set_b.union(set_c)  # union
+print("Union OR: ", union_set)
+intersection_set = set_b.intersection(set_c)  # intersection
+print("Intersection AND: ", intersection_set)
+difference_set = set_b.difference(set_c)  # difference
+print("Difference b - c: ", difference_set)    
+
+
+print("=============================")
+                    #dictionary
+my_dict = {"k1": 1, "k2": 2, "k3": 3}
+print(my_dict)
+
+xdict = ([("a", 10), ("b", 20), ("c", 30)])  # list of tuples
+print(xdict)
+dictx = dict(xdict)  # convert list of tuples to dictionary
+print(dictx)
+
+print(dictx["b"])
+dictx["d"] = 40  # add new key-value pair
+print(dictx)
+dictx["a"] = 15  # modify value for key 'a'(key is immutable while value is mutable) ,key must be unique
+print(dictx)
+
+dicty = dict()
+dicty["first"] = 100
+dicty["second"] = 200
+dicty["third"] = 300    
+print(dicty)
+print(len(dicty))  # length of dictionary
+print("second" in dicty)  # check if key exists navigation with the key NOT value
+
+print(set(dicty))  # get all keys as a set
+print(set(dicty.values()))  # get all values
+
+def searchfun(d,target):
+    for key in d:
+        if d[key] == target:
+            return key
+    return dict()
+print(searchfun(dicty,200)) # second
+print(searchfun(dicty,500)) # {}
 
