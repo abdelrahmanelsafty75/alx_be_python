@@ -307,3 +307,62 @@ def searchfun(d,target):
 print(searchfun(dicty,200)) # second
 print(searchfun(dicty,500)) # {}
 
+
+                    #scope of variables
+count = 10 
+def outer_fun():
+  count = 5   
+
+  def inner_fun():
+    count = 2  
+    print(f"Inner function: {count}")  
+
+  inner_fun()
+  print(f"Outer function: {count}")  
+
+print(f"Global scope: {count}")  
+
+outer_fun()
+
+print("===================================")
+
+z = 10
+def outer():
+    z = 20
+    def inner():
+        nonlocal z # to modify the z in the outer function
+        z = 30
+        print("Inner:", z)
+    inner()
+    print("Outer:", z)
+outer()
+print("Global:", z)
+
+print("===================================")
+
+z2 = 10
+def outer2():
+    global z2 # to modify the global z
+    z2 = 20
+    def inner2():
+        # global z # if we want to modify the global z from inner function
+        z2 = 30
+        print("Inner 2:", z2)
+    inner2()
+    print("Outer 2:", z2)
+outer2()
+print("Global 2:", z2)
+
+print("===================================")
+z3 = "I am global"
+def outer3():
+    #
+    def inner3():
+        #
+        print("Inner 3:", z3)  # can access global z3
+
+    inner3()
+    print("Outer 3:", z3)  # can access global z3
+
+outer3()
+print("Global 3:", z3)
