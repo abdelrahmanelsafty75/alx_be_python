@@ -1,5 +1,5 @@
 import unittest
-from programming_paradigm.simple_calculator import SimpleCalculator
+from simple_calculator import SimpleCalculator
 
 class TestSimpleCalculator(unittest.TestCase):
     def setUp(self):
@@ -36,5 +36,5 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(-1, -1), 1)
         self.assertIsNone(self.calc.divide(5, 0))
         self.assertEqual(self.calc.divide(7.5, 2.5), 3)
-        
+
         self.assertIsNone(self.calc.divide(5, 0))
