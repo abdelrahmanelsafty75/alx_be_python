@@ -38,3 +38,6 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(7.5, 2.5), 3)
 
         self.assertIsNone(self.calc.divide(5, 0))
+
+if __name__ == '__main__':
+    unittest.main()
